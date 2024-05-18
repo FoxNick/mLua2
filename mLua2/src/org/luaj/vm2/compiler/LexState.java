@@ -669,9 +669,13 @@ public class LexState extends Constants {
 				save_and_next();
 				if (check_next(".")) {
 					if (check_next("."))
-						return TK_DOTS; /* ... */
+						{
+						    return TK_DOTS;
+						}
 					else
-						return TK_CONCAT; /* .. */
+						{
+						    return TK_CONCAT;
+						} /* .. */
 				} else if (!isdigit(current))
 					return '.';
 				else {
@@ -724,7 +728,9 @@ public class LexState extends Constants {
 			t.set( lookahead ); /* use this one */
 			lookahead.token = TK_EOS; /* and discharge it */
 		} else
-			t.token = llex(t.seminfo); /* read next token */
+			{
+			    t.token = llex(t.seminfo);
+			} /* read next token */
 	}
 
 	void lookahead() {
@@ -1691,7 +1697,9 @@ public class LexState extends Constants {
 		    if (nexps != nvars) {
 		      this.adjust_assign(nvars, nexps, e);
 		      if (nexps > nvars)
-		        this.fs.freereg -= nexps - nvars;  /* remove extra values */
+		        {
+		            this.fs.freereg -= nexps - nvars;
+		        }  /* remove extra values */
 	    }
 	    else {
 	    	fs.setoneret(e);  /* close last expression */

@@ -205,7 +205,9 @@ public class FuncState extends Constants {
 				gt.nactvar = bl.nactvar;
 			}
 			if (!ls.findlabel(i))
-				i++; /* move to next one */
+				{
+				    i++;
+				} /* move to next one */
 		}
 	}
 	
@@ -236,7 +238,9 @@ public class FuncState extends Constants {
 		this.freereg = this.nactvar;  /* free registers */
 		ls.dyd.n_label = bl.firstlabel;  /* remove local labels */
 		if (bl.previous != null)  /* inner block? */
-		    this.movegotosout(bl);  /* update pending gotos to outer block */
+		    {
+		        this.movegotosout(bl);
+		    }
 		else if (bl.firstgoto < ls.dyd.n_gt)  /* pending gotos in outer block? */
 		    ls.undefgoto(ls.dyd.gt[bl.firstgoto]);  /* error */
 	}

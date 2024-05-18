@@ -423,7 +423,9 @@ public class LoadState {
     public static String getSourceName(String name) {
         String sname = name;
         if ( name.startsWith("@") || name.startsWith("=") )
-			sname = name.substring(1);
+			{
+			    sname = name.substring(1);
+			}
 		else if ( name.startsWith("\033") )
 			sname = SOURCE_BINARY_STRING;
         return sname;
