@@ -149,7 +149,7 @@ public class OsLib extends TwoArgFunction {
 				case DATE: {
 					String s = args.optjstring(1, "%c");
 					double t = args.isnumber(2)? args.todouble(2): time(null);
-					if (s.equals("*t")) {
+					if ("*t".equals(s)) {
 						Calendar d = Calendar.getInstance();
 						d.setTime(new Date((long)(t*1000)));
 						LuaTable tbl = LuaValue.tableOf();
