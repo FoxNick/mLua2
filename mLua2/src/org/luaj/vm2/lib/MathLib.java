@@ -21,6 +21,7 @@
 ******************************************************************************/
 package org.luaj.vm2.lib;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 import org.luaj.vm2.LuaDouble;
@@ -220,7 +221,7 @@ public class MathLib extends TwoArgFunction {
 	}
 	
 	static class random extends LibFunction {
-		Random random = new Random();
+		Random random = new SecureRandom();
 		public LuaValue call() {
 			return valueOf( random.nextDouble() );
 		}
